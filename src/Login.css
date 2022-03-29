@@ -6,8 +6,9 @@
     overflow-x: hidden;
     background: darkcyan;
 }
-h1{
-    color: forestgreen;
+#title{
+    color: #d4a42b;
+    margin-right: 18rem;
 }
 
 .login-contain {
@@ -40,9 +41,23 @@ h1{
     flex-direction: column;
     justify-content: center;
 }
-input{
+
+#email1{
     display: block;
-    border: none;
+    border: 1px solid;
+    border-radius: 15px;
+    height: 2rem;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1rem;
+    color: gray;
+    transition: all 0.1s ease-in-out;
+}
+#pwd1{
+    display: block;
+    border: 2px solid;
+    border-radius: 15px;
     height: 2rem;
     width: 70%;
     margin: auto;
@@ -100,6 +115,9 @@ h2{
     float: left;
     margin-left: 1rem;
     margin-bottom: 2.5rem;
+}
+span{
+   color: #e35b5b;
 }
 
 

@@ -1,49 +1,78 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Link} from "react-router-dom";
 import './Register.css';
 
-function Register(){
-    return(
-        <div className="main-Register">
+function Register() {
+    const handleSubmit = e => {
+        e.preventDefault();
+    };
 
-
-            <div className="left-Side">
-
-            </div>
-            <div className="right-Side">
-                <div className="top-right">
-                <h4>Already have an Account<br/>
-                <h3><Link id="link-signin" to="/login">Login Here!</Link></h3>
-                    </h4>
-                </div>
-                <div className="body-right">
-                    <div className="container">
-                        <form>
-                        <div className="SignUp-Details">
-                            <h5>FullName</h5><br/>
-                            <input type="text" name="Fname" id="fname"/>
-                        </div>
-                        <div className="SignUp-Details">
-                            <h5>Email</h5><br/>
-                            <input type="email" name="Enter your mail" id="email"/>
-                        </div>
-                        <div className="SignUp-Details">
-                            <h5>Password</h5><br/>
-                            <input type="password" name="Enter your password" id="pwd"/>
-                        </div>
-                        <div className="SignUp-Details">
-                            <h5>Confirm Password</h5><br/>
-                            <input type="password" name="confirm the password" id="cpwd"/>
-                        </div>
-                            <input type="submit" value="SignUp"/>
-                        </form>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-    );
+    const [Fname, setFname] = useState('');
+    const [email, setemail] = useState('');
+    const [pwd, setpwd] = useState('');
+    const [cpwd, setcpwd] = useState('');
+    return React.createElement("div", {
+        className: "main-Register"
+    }, React.createElement("div", {
+        className: "left-Side"
+    }), React.createElement("div", {
+        className: "right-Side"
+    }, React.createElement("div", {
+        className: "top-right"
+    }, React.createElement("h4", null, "Already have an Account", React.createElement("br", null), React.createElement("h3", null, React.createElement(Link, {
+        id: "link-signin",
+        to: "/login"
+    }, "Login Here!")))), React.createElement("div", {
+        className: "body-right"
+    }, React.createElement("h1", null, "Create Your Account"), React.createElement("div", {
+        className: "container"
+    }, React.createElement("form", {
+        onSubmit: handleSubmit
+    }, React.createElement("div", {
+        className: "SignUp-Details"
+    }, React.createElement("h5", null, "FullName"), React.createElement("br", null), React.createElement("input", {
+        type: "text",
+        name: "Fname",
+        value: Fname,
+        onChange: e => {
+            setFname(e.target.value);
+        },
+        id: "fname"
+    })), React.createElement("div", {
+        className: "SignUp-Details"
+    }, React.createElement("h5", null, "Email"), React.createElement("br", null), React.createElement("input", {
+        type: "email",
+        name: "Enter your mail",
+        value: email,
+        onChange: e => {
+            setemail(e.target.value);
+        },
+        id: "email"
+    })), React.createElement("div", {
+        className: "SignUp-Details"
+    }, React.createElement("h5", null, "Password"), React.createElement("br", null), React.createElement("input", {
+        type: "password",
+        name: "Enter your password",
+        value: pwd,
+        onChange: e => {
+            setpwd(e.target.value);
+        },
+        id: "pwd"
+    })), React.createElement("div", {
+        className: "SignUp-Details"
+    },React.createElement("h5", null, "Confirm Password"), React.createElement("br", null), React.createElement("input", {
+        type: "password",
+        name: "confirm the password",
+        value: cpwd,
+        onChange: e => {
+            setcpwd(e.target.value);
+        },
+        id: "cpwd"
+    })),React.createElement("input", {
+        id: "signup-btn",
+        type: "submit",
+        value: "SignUp"
+    }))))));
 }
+
 export default Register;
